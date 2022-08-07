@@ -64,33 +64,31 @@
 
 ## 一、营销管理
 
-![image-20200312152917081](C:\Users\creater\Desktop\crm\images\image-20200312152917081.png)
+![image-20200308181545375](http://www.creatercc.com:3090/img/avatorImages/image-20200312152917081.png)
 
 ## 二、客户管理
 
 1. 客户信息管理
 
-![image-20200308181545375](C:\Users\creater\Desktop\crm\images\image-20200308181545375.png)
+![image-20200308181545375](http://www.creatercc.com:3090/img/avatorImages/image-20200308181545375.png)
 
 2. 客户流失管理
 
-![image-20200308181853868](C:\Users\creater\Desktop\crm\images\image-20200308181853868.png)
+![image-20200308181853868](http://www.creatercc.com:3090/img/avatorImages/image-20200308181853868.png)
 
 ## 三、服务管理
 
-![image-20200308182052246](C:\Users\creater\Desktop\crm\images\image-20200308182052246.png)
+![image-20200308182052246](http://www.creatercc.com:3090/img/avatorImages/image-20200308182052246.png)
 
 ## 四、系统管理
 
 1. 权限管理
 
-![image-20200308182408106](C:\Users\creater\Desktop\crm\images\image-20200308182408106.png)
+![image-20200308182408106](http://www.creatercc.com:3090/img/avatorImages/image-20200308182408106.png)
 
 2. 字典&日志管理
 
-![image-20200308182707727](C:\Users\creater\Desktop\crm\images\image-20200308182707727.png)
-
-
+![image-20200308182707727](http://www.creatercc.com:3090/img/avatorImages/image-20200308182707727.png)
 
 ## 4.表结构详情
 
@@ -271,177 +269,5 @@
 
 ## 一、项目技术栈
 
-![image-20200222161735883](C:\Users\creater\Desktop\crm\images\image-20200222161735883.png)
+![image-20200222161735883](http://www.creatercc.com:3090/img/avatorImages/image-20200222161735883.png)
 
-## 二、项目搭建与测试
-
-1. **pom.xml引入坐标&插件**
-
-```xml
-<properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-</properties>
-
-<parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.2.2.RELEASE</version>
-  </parent>
-
-
-  <dependencies>
-
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-aop</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-freemarker</artifactId>
-    </dependency>
-      <dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-test</artifactId>
-          <scope>test</scope>
-      </dependency>
-
-    <!--
-      mybatis 集成
-    -->
-    <dependency>
-      <groupId>org.mybatis.spring.boot</groupId>
-      <artifactId>mybatis-spring-boot-starter</artifactId>
-      <version>2.1.1</version>
-    </dependency>
-    <!-- 分页插件 -->
-    <dependency>
-      <groupId>com.github.pagehelper</groupId>
-      <artifactId>pagehelper-spring-boot-starter</artifactId>
-      <version>1.2.13</version>
-    </dependency>
-
-
-    <!--mysql 驱动-->
-    <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <scope>runtime</scope>
-    </dependency>
-
-    <!-- https://mvnrepository.com/artifact/com.mchange/c3p0 -->
-    <dependency>
-      <groupId>com.mchange</groupId>
-      <artifactId>c3p0</artifactId>
-      <version>0.9.5.5</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-      <version>3.5</version>
-    </dependency>
-    <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>fastjson</artifactId>
-      <version>1.2.47</version>
-    </dependency>
-
-
-    <!-- DevTools 的坐标 热部署 -->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-devtools</artifactId>
-      <optional>true</optional>
-    </dependency>
-  </dependencies>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.3.2</version>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-          <encoding>UTF-8</encoding>
-        </configuration>
-      </plugin>
-        <plugin>
-            <groupId>org.mybatis.generator</groupId>
-            <artifactId>mybatis-generator-maven-plugin</artifactId>
-            <version>1.3.2</version>
-            <configuration>
-            <configurationFile>src/main/resources/generatorConfig.xml</configurationFile>
-                <verbose>true</verbose>
-                <overwrite>true</overwrite>
-            </configuration>
-        </plugin>  
-      <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-        <configuration>
-          <!-- 如果没有该配置，热部署的devtools不生效 -->
-          <fork>true</fork>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-```
-
-2. **添加配置文件application.yml**
-
-```yml
-## 端口号  上下文路径
-server:
-  port: 9898
-  servlet:
-    context-path: /crm
-
-## 数据源配置
-spring:
-  datasource:
-    type: com.mchange.v2.c3p0.ComboPooledDataSource
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/crm?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
-    username: root
-    password: root
-
-  ## freemarker
-  freemarker:
-    suffix: .ftl
-    content-type: text/html
-    charset: UTF-8
-    template-loader-path: classpath:/views/
-
-  ## 启用热部署
-  devtools:
-    restart:
-      enabled: true
-      additional-paths: src/main/java
-## mybatis 配置
-mybatis:
-  mapper-locations: classpath:/mappers/*.xml
-  type-aliases-package: com.xxxx.crm.vo;com.xxxx.crm.query;com.xxxx.crm.dto
-  configuration:
-    map-underscore-to-camel-case: true
-
-## pageHelper
-pagehelper:
-  helper-dialect: mysql
-  
-## 设置 dao 日志打印级别
-logging:
-  level:
-    com:
-      xxxx:
-        crm:
-          dao: debug
-```
-
-3. **以上为springboot项目基本配置，项目源码以github源码为准！！！**
